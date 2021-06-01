@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Snippets-Viewer</string>
+    <string name="username">Login</string>
+    <string name="password">mot de passe</string>
+    <string name="connection">"Connexion "</string>
+    <string name="register">Inscription</string>
+</resources>
