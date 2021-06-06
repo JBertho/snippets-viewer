@@ -4,4 +4,6 @@
     <string name="password">mot de passe</string>
     <string name="connection">"Connexion "</string>
     <string name="register">Inscription</string>
+    <string name="projects">Projets</string>
+    <string name="snippets">Snippets</string>
 </resources>

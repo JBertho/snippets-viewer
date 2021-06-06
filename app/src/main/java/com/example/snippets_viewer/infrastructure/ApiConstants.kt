@@ -5,5 +5,7 @@ object ApiConstants {
 
     object EndPoints {
         const val Auth = "auth/"
+        const val Project = "projects/"
+        const val Snippets = "snippets/"
     }
 }
