@@ -12,6 +12,8 @@ object SnippetAdapter {
                 snippet.updateDate,
                 snippet .createUserId,
                 snippet.updateUserId,
+                snippet.createUserName,
+                snippet.updateUserName,
                 snippet.projectId,
                 false,
                 language
