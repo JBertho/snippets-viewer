@@ -5,14 +5,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <TextView
         android:id="@+id/snippet_title"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:fontFamily="@font/stracruiser_italic"
         android:text="@string/snippets"
         android:textAlignment="center"
         android:textColor="@color/secondaryColor"
         android:textSize="@dimen/title_size"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/compileButton"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/compileButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/green_start"
+        app:layout_constraintStart_toEndOf="@+id/snippet_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/snippet_swipe_container"
+        android:contentDescription="@string/button_for_compilation">
+
+    </ImageView>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/snippet_swipe_container"

@@ -22,6 +22,7 @@
         </activity>
         <activity android:name=".projects.ui.ProjectListActivity" />
         <activity android:name=".snippets.ui.SnippetsActivity" />
+        <activity android:name=".compiler.ui.CompilerActivity"/>
     </application>
 
 </manifest>

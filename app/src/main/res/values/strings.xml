@@ -6,4 +6,7 @@
     <string name="register">Inscription</string>
     <string name="projects">Projets</string>
     <string name="snippets">Snippets</string>
+    <string name="button_for_compilation">Button for compilation</string>
+    <string name="compilation_result">Résultat de la compilation</string>
+    <string name="redundancy_result">Résultat de la redoncance</string>
 </resources>

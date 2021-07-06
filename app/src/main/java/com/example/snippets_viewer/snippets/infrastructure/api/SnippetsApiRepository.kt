@@ -4,7 +4,10 @@ import android.content.Context
 import com.example.snippets_viewer.infrastructure.ApiConstants
 import com.example.snippets_viewer.infrastructure.interceptors.AuthorizationRequestInterceptor
 import com.example.snippets_viewer.projects.infrastructure.api.ProjectsService
+import com.example.snippets_viewer.snippets.application.models.ItemSnippet
 import com.example.snippets_viewer.snippets.infrastructure.api.models.Snippet
+import com.example.snippets_viewer.snippets.infrastructure.api.models.request.CompileRequest
+import com.example.snippets_viewer.snippets.infrastructure.api.models.response.CompilationResponse
 import com.example.snippets_viewer.users.application.GetUserToken
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -45,6 +48,13 @@ class SnippetsApiRepository(val context: Context) {
 
     fun getSnippetsOfProject(projectId: Int, callback: Callback<List<Snippet>>) {
         val call = snippetsService?.getUserProjects(projectId)
+        call?.enqueue(callback)
+    }
+
+    fun compileSnippets(checkedSnippets: List<ItemSnippet>, projectId: Int, callback: Callback<CompilationResponse>) {
+        val compileRequest = CompileRequest(checkedSnippets.map { snippet -> snippet.id }, projectId)
+        val call = snippetsService?.compile(compileRequest)
+
         call?.enqueue(callback)
     }
 }
