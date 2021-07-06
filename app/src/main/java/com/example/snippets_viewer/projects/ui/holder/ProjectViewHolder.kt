@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.snippets_viewer.R
 import com.example.snippets_viewer.projects.infrastructure.api.models.Project
@@ -16,6 +17,7 @@ class ProjectViewHolder (inflater: LayoutInflater, parent: ViewGroup, projectLis
 
     private var name: TextView? = null
     private var description: TextView? = null
+    private var card: CardView? = null
     private var onProjectListener: ProjectItemAdapter.OnProjectListener? = null
     private var position: Int? = null;
 
@@ -24,6 +26,7 @@ class ProjectViewHolder (inflater: LayoutInflater, parent: ViewGroup, projectLis
     init {
         name = itemView.findViewById(R.id.project_item_name)
         description = itemView.findViewById(R.id.project_item_desc)
+        card = itemView.findViewById(R.id.card_project)
         onProjectListener = projectListener
     }
 
@@ -31,7 +34,7 @@ class ProjectViewHolder (inflater: LayoutInflater, parent: ViewGroup, projectLis
         name?.text = "${project.name}"
         description?.text = "Langage : ${project.language}"
         this.position = position
-        itemView?.setOnClickListener(this)
+        card?.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
