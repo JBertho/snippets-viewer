@@ -96,6 +96,7 @@ class SnippetsActivity: AppCompatActivity(), SnippetItemAdapter.OnSnippetListene
     }
 
     private fun compileCode() {
+        loading_creen.visibility = View.VISIBLE
         val checkedSnippets = listSnippet.filter { snippet -> snippet.isChecked }
         if (projectId !== null) {
             snippetsApiRepository.compileSnippets(checkedSnippets, projectId!!, object : Callback<CompilationResponse> {
@@ -103,6 +104,7 @@ class SnippetsActivity: AppCompatActivity(), SnippetItemAdapter.OnSnippetListene
                     call: Call<CompilationResponse>,
                     response: Response<CompilationResponse>
                 ) {
+                    loading_creen.visibility = View.GONE
                     response.body()?.let { compilationResponse ->
                         Log.d("TEST", compilationResponse.toString())
                         CompilerActivity.start(this@SnippetsActivity,compilationResponse)
@@ -111,6 +113,7 @@ class SnippetsActivity: AppCompatActivity(), SnippetItemAdapter.OnSnippetListene
 
                 override fun onFailure(call: Call<CompilationResponse>, t: Throwable) {
                     TODO("Not yet implemented")
+                    loading_creen.visibility = View.GONE
                 }
 
 

@@ -17,6 +17,7 @@ class ProjectViewHolder (inflater: LayoutInflater, parent: ViewGroup, projectLis
 
     private var name: TextView? = null
     private var description: TextView? = null
+    private var participants: TextView? = null
     private var card: CardView? = null
     private var onProjectListener: ProjectItemAdapter.OnProjectListener? = null
     private var position: Int? = null;
@@ -26,13 +27,15 @@ class ProjectViewHolder (inflater: LayoutInflater, parent: ViewGroup, projectLis
     init {
         name = itemView.findViewById(R.id.project_item_name)
         description = itemView.findViewById(R.id.project_item_desc)
+        participants = itemView.findViewById(R.id.project_item_users)
         card = itemView.findViewById(R.id.card_project)
         onProjectListener = projectListener
     }
 
     fun bind(project: Project, position: Int) {
-        name?.text = "${project.name}"
+        name?.text = project.name
         description?.text = "Langage : ${project.language}"
+        participants?.text = project.participants.toString()
         this.position = position
         card?.setOnClickListener(this)
     }

@@ -10,4 +10,5 @@
     <string name="compilation_result">Résultat de la compilation</string>
     <string name="redundancy_result">Résultat de la redoncance</string>
     <string name="group_users">Utilisateurs du groupe</string>
+    <string name="lancement_du_projet">Lancement du projet</string>
 </resources>

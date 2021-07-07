@@ -44,4 +44,37 @@
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loading_creen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/loading_background"
+        android:visibility="invisible"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/loader"
+            android:text="@string/lancement_du_projet"
+            android:layout_marginBottom="20dp"
+            android:textSize="20dp"
+            android:fontFamily="@font/stracruiser_italic"
+            android:textColor="@color/PrimaryColor"
+            />
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/loader"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="?android:attr/progressBarStyleLarge"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

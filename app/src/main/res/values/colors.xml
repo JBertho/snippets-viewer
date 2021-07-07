@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="secondaryColor">#81D4FA</color>
     <color name="stroke_color">#636161</color>
+    <color name="loading_background">#60878787</color>
+    <color name="PrimaryColor">#009DC7</color>
 </resources>
