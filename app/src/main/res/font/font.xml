@@ -19,5 +19,9 @@
     <font
         android:font="@font/stracruiser_italic"
         android:fontStyle="normal"
+/>
+    <font
+        android:font="@font/asap_semi_bold"
+        android:fontStyle="normal"
         android:fontWeight="400" />
 </font-family>

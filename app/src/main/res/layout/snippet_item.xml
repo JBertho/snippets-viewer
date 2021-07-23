@@ -34,6 +34,7 @@
             app:layout_constraintStart_toEndOf="@id/snippet_item_icon"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed"
+            android:fontFamily="@font/asap_semi_bold"
             tools:text="Gérard Depardieu"
             android:padding="10dp"
             />

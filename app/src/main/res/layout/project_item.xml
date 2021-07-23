@@ -41,6 +41,7 @@
                     android:id="@+id/project_item_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/asap_semi_bold"
                     android:textSize="24sp"
                     android:textColor="@color/black"
                     android:textStyle="bold"/>
@@ -50,6 +51,7 @@
                     android:textColor="@color/black"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
+                    android:fontFamily="@font/asap_semi_bold"
                     />
 
             </LinearLayout>
@@ -66,6 +68,7 @@
                         android:layout_width="wrap_content"
                         android:textColor="@color/black"
                         android:text="25"
+                        android:fontFamily="@font/asap_semi_bold"
                         android:layout_height="wrap_content"
                         android:textSize="18sp"
                         />

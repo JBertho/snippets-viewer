@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">Snippets-Viewer</string>
+    <string name="app_name">Editing Together</string>
     <string name="username">Login</string>
-    <string name="password">mot de passe</string>
+    <string name="password">Mot de passe</string>
     <string name="connection">"Connexion "</string>
     <string name="register">Inscription</string>
-    <string name="projects">Projets</string>
-    <string name="snippets">Snippets</string>
+    <string name="projects">projets</string>
+    <string name="snippets">snippets</string>
     <string name="button_for_compilation">Button for compilation</string>
     <string name="compilation_result">Résultat de la compilation</string>
     <string name="redundancy_result">Résultat de la redoncance</string>

@@ -15,6 +15,6 @@
     <color name="secondaryColor">#D0D1E1</color>
     <color name="backgroundColor">#EBECEF</color>
     <color name="fourthColor">#908DB9</color>
-    <color name="checkAllColor">#62DD65</color>
+    <color name="checkAllColor">#4D4D7C</color>
     <color name="uncheckAllColor">#BC4F47</color>
 </resources>

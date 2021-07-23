@@ -35,16 +35,16 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.75" />
 
-    <TextView
-        android:id="@+id/title_tv"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textAlignment="center"
+    <ImageView
+        android:layout_marginTop="30dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         app:layout_constraintBottom_toTopOf="@id/inputs_hl_gl"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/logo_with_name"
+        />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/login_cl"
@@ -73,6 +73,7 @@
                 android:id="@+id/ti_login"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:fontFamily="@font/asap_semi_bold"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -104,6 +105,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/ti_password"
                 android:layout_width="match_parent"
+                android:fontFamily="@font/asap_semi_bold"
                 android:layout_height="match_parent"
                 android:inputType="textPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -115,6 +117,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/connection"
+        android:fontFamily="@font/asap_semi_bold"
+
         style="@style/Widget.App.ButtonStyle"
         app:layout_constraintEnd_toStartOf="@+id/end_input_gl"
         app:layout_constraintStart_toStartOf="@+id/start_input_gl"

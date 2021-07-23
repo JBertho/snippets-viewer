@@ -32,7 +32,7 @@
                 android:gravity="center"
                 android:layout_marginTop="5dp"
                 android:textSize="20dp"
-                android:fontFamily="@font/stracruiser_italic"
+                android:fontFamily="@font/asap_semi_bold"
                 android:textColor="@color/fourthColor"
                 />
 
@@ -48,6 +48,7 @@
             <TextView
                 android:id="@+id/response_compilation"
                 android:layout_width="match_parent"
+                android:fontFamily="@font/asap_semi_bold"
                 android:layout_height="wrap_content">
 
             </TextView>
@@ -80,7 +81,7 @@
                 android:gravity="center"
                 android:layout_marginTop="5dp"
                 android:textSize="20dp"
-                android:fontFamily="@font/stracruiser_italic"
+                android:fontFamily="@font/asap_semi_bold"
                 android:textColor="@color/fourthColor"
                 />
 
@@ -96,6 +97,7 @@
             <TextView
                 android:id="@+id/response_redundancy"
                 android:layout_width="match_parent"
+                android:fontFamily="@font/asap_semi_bold"
                 android:layout_height="wrap_content">
             </TextView>
         </ScrollView>
