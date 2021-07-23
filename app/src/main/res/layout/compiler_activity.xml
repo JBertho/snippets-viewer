@@ -3,22 +3,48 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#979393"
     android:orientation="vertical">
-    <LinearLayout
-        android:id="@+id/compiler_top"
-        android:layout_width="match_parent"
+    <com.google.android.material.card.MaterialCardView
+        app:strokeWidth="2dp"
+        app:strokeColor="@color/PrimaryColor"
+        app:cardElevation="0dp"
         android:layout_height="0dp"
         android:layout_weight="0.5"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/text_compilation"
+        android:layout_marginHorizontal="5dp"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="5dp"
+        >
+        <com.google.android.material.card.MaterialCardView
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/PrimaryColor"
+            android:background="@color/backgroundColor"
+            app:cardElevation="0dp"
+            android:layout_height="30dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/compilation_result"/>
+            >
+            <TextView
+                android:id="@+id/text_compilation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/compilation_result"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:fontFamily="@font/stracruiser_italic"
+                android:textColor="@color/fourthColor"
+                />
+
+
+        </com.google.android.material.card.MaterialCardView>
         <ScrollView
             android:id="@+id/scroll_response"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="35dp"
+            >
             <TextView
                 android:id="@+id/response_compilation"
                 android:layout_width="match_parent"
@@ -26,35 +52,53 @@
 
             </TextView>
         </ScrollView>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/compiler_bottom"
-        android:layout_width="match_parent"
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        app:strokeWidth="2dp"
+        app:strokeColor="@color/PrimaryColor"
+        app:cardElevation="0dp"
         android:layout_height="0dp"
         android:layout_weight="0.5"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/text_redundancy"
+        android:layout_marginHorizontal="5dp"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="15dp"
+        >
+        <com.google.android.material.card.MaterialCardView
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/PrimaryColor"
+            android:background="@color/backgroundColor"
+            app:cardElevation="0dp"
+            android:layout_height="30dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="@string/redundancy_result"
-            />
+            >
+            <TextView
+                android:id="@+id/text_redundancy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/code_analysis"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:fontFamily="@font/stracruiser_italic"
+                android:textColor="@color/fourthColor"
+                />
+
+        </com.google.android.material.card.MaterialCardView>
         <ScrollView
             android:id="@+id/scroll_redundancy"
             app:layout_constraintTop_toBottomOf="@id/text_redundancy"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="35dp"
+            >
             <TextView
                 android:id="@+id/response_redundancy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
             </TextView>
         </ScrollView>
-
-    </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>

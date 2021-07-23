@@ -58,6 +58,6 @@ class ProjectListActivity: AppCompatActivity(), ProjectItemAdapter.OnProjectList
 
     override fun onProjectClick(position: Int) {
         val project = projectList.get(position)
-        SnippetsActivity.start(this, project.id)
+        SnippetsActivity.start(this, project.id, project.name)
     }
 }

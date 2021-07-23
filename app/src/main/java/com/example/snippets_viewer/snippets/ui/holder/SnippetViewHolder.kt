@@ -47,6 +47,7 @@ class SnippetViewHolder (inflater: LayoutInflater, parent: ViewGroup, snippetLis
         this.position = position
         itemView.setOnClickListener(this)
         checkBox?.setOnCheckedChangeListener(this)
+        checkBox?.isChecked = snippet.isChecked
     }
 
     override fun onClick(v: View?) {

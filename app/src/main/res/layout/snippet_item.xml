@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="20dp"
+    android:paddingHorizontal="20dp"
     android:id="@+id/snippet_item"
     >
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -30,6 +30,7 @@
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:textStyle="bold"
+            android:textColor="@color/fourthColor"
             app:layout_constraintStart_toEndOf="@id/snippet_item_icon"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed"
@@ -43,6 +44,7 @@
             android:layout_height="wrap_content"
             android:width="48dp"
             android:height="48dp"
+            android:buttonTint="@color/fourthColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:checked="false"
@@ -60,5 +62,14 @@
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ll_snippet_item" />
+
+    <View
+        android:id="@+id/limit_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:paddingTop="5dp"
+        app:layout_constraintTop_toBottomOf="@id/snippet_item_desc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@android:color/darker_gray"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

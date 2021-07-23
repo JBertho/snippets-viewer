@@ -7,8 +7,14 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="secondaryColor">#81D4FA</color>
+
+
     <color name="stroke_color">#636161</color>
-    <color name="loading_background">#60878787</color>
-    <color name="PrimaryColor">#009DC7</color>
+    <color name="loading_background">#BCA0A1A3</color>
+    <color name="PrimaryColor">#A9A9C4</color>
+    <color name="secondaryColor">#D0D1E1</color>
+    <color name="backgroundColor">#EBECEF</color>
+    <color name="fourthColor">#908DB9</color>
+    <color name="checkAllColor">#62DD65</color>
+    <color name="uncheckAllColor">#BC4F47</color>
 </resources>

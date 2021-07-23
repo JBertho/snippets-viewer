@@ -55,7 +55,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     }
 
                     override fun onFailure(call: Call<ConnectedUserResponse>, t: Throwable) {
-                        Log.d("TEST",t.message.toString())
                     }
 
                 })

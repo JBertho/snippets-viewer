@@ -2,40 +2,91 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <TextView
-        android:id="@+id/snippet_title"
+    <LinearLayout
+        android:id="@+id/ll_title"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:fontFamily="@font/stracruiser_italic"
-        android:text="@string/snippets"
-        android:textAlignment="center"
-        android:textColor="@color/secondaryColor"
-        android:textSize="@dimen/title_size"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/compileButton"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        android:orientation="horizontal"
+        android:layout_marginBottom="6dp"
+        app:layout_constraintBottom_toTopOf="@id/limit_view">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/limit_view"
+            android:layout_weight="0.8"
+            >
+            <TextView
+                android:layout_marginTop="7dp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="@string/snippets"
+                android:textAlignment="center"
+                android:textSize="45sp"
+                android:fontFamily="@font/stracruiser_italic"
+                android:textColor="@color/fourthColor"
+                />
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/compileButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/green_start"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="5dp"
+            android:contentDescription="@string/button_for_compilation">
 
-    <ImageView
-        android:id="@+id/compileButton"
-        android:layout_width="wrap_content"
+        </ImageView>
+    </LinearLayout>
+    <View
+        android:id="@+id/limit_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintTop_toBottomOf="@id/ll_title"
+        app:layout_constraintBottom_toTopOf="@id/ll_project_name"
+        android:background="@color/fourthColor"/>
+    <LinearLayout
+        android:id="@+id/ll_project_name"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/green_start"
-        app:layout_constraintStart_toEndOf="@+id/snippet_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/limit_view"
         app:layout_constraintBottom_toTopOf="@id/snippet_swipe_container"
-        android:contentDescription="@string/button_for_compilation">
+        android:orientation="horizontal">
+            <TextView
+                android:layout_weight="0.6"
+                android:id="@+id/snippet_title"
+                android:layout_height="wrap_content"
+                android:layout_width="0sp"
+                android:text="@string/project_name"
+                android:paddingHorizontal="15dp"
+                android:textSize="20sp"
+                android:textColor="@color/fourthColor"
+                />
+            <Button
+                android:layout_weight="0.4"
+                android:id="@+id/btn_all_action"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/checkAllColor"
+                android:text="@string/check_all"
+                android:textSize="12sp"
+                android:layout_marginEnd="20dp"
+                />
 
-    </ImageView>
+    </LinearLayout>
+
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_marginTop="10dp"
         android:id="@+id/snippet_swipe_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/snippet_title">
+        app:layout_constraintTop_toBottomOf="@id/ll_project_name">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/snippets_rv"
@@ -51,30 +102,104 @@
         android:background="@color/loading_background"
         android:visibility="invisible"
         >
-        <TextView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/loader"
-            android:text="@string/lancement_du_projet"
-            android:layout_marginBottom="20dp"
-            android:textSize="20dp"
-            android:fontFamily="@font/stracruiser_italic"
-            android:textColor="@color/PrimaryColor"
-            />
-        <androidx.core.widget.ContentLoadingProgressBar
-            android:id="@+id/loader"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="60dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_height="90dp"
             app:layout_constraintTop_toTopOf="parent"
-            style="?android:attr/progressBarStyleLarge"
-            />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:cardCornerRadius="15dp"
+            android:background="@color/PrimaryColor"
+            app:layout_constraintEnd_toEndOf="parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/loader"
+                android:text="@string/lancement_du_projet"
+                android:layout_marginBottom="20dp"
+                android:layout_marginHorizontal="10dp"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/stracruiser_italic"
+                android:textColor="@color/PrimaryColor"
+                />
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/loader"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                style="?android:attr/progressBarStyleLarge"
+                />
+
+        </com.google.android.material.card.MaterialCardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/error_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/loading_background"
+        android:visibility="invisible"
+        >
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:cardCornerRadius="15dp"
+            android:background="@color/PrimaryColor"
+            app:layout_constraintEnd_toEndOf="parent">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/error"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:textSize="20sp"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/stracruiser_italic"
+                    android:textColor="@color/uncheckAllColor"
+                    />
+                <TextView
+                    android:id="@+id/tv_display_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/error"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:textSize="16sp"
+                    />
+                <TextView
+                    android:id="@+id/close_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/close"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:textColor="@color/fourthColor"
+                    android:textSize="16sp"
+                    />
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

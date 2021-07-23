@@ -11,4 +11,10 @@
     <string name="redundancy_result">Résultat de la redoncance</string>
     <string name="group_users">Utilisateurs du groupe</string>
     <string name="lancement_du_projet">Lancement du projet</string>
+    <string name="code_analysis">Analyse de code</string>
+    <string name="project_name">Nom du projet</string>
+    <string name="check_all">Tout cocher</string>
+    <string name="uncheck_all">Tout décocher</string>
+    <string name="error">Erreur</string>
+    <string name="close">Fermer</string>
 </resources>

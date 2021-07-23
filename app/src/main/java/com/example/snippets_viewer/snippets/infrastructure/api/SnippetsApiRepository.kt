@@ -1,6 +1,7 @@
 package com.example.snippets_viewer.snippets.infrastructure.api
 
 import android.content.Context
+import android.util.Log
 import com.example.snippets_viewer.infrastructure.ApiConstants
 import com.example.snippets_viewer.infrastructure.interceptors.AuthorizationRequestInterceptor
 import com.example.snippets_viewer.projects.infrastructure.api.ProjectsService
@@ -54,7 +55,6 @@ class SnippetsApiRepository(val context: Context) {
     fun compileSnippets(checkedSnippets: List<ItemSnippet>, projectId: Int, callback: Callback<CompilationResponse>) {
         val compileRequest = CompileRequest(checkedSnippets.map { snippet -> snippet.id }, projectId)
         val call = snippetsService?.compile(compileRequest)
-
         call?.enqueue(callback)
     }
 }
