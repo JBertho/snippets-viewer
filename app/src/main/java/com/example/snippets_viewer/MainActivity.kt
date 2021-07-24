@@ -16,6 +16,10 @@ import com.example.snippets_viewer.users.infrastructure.api.UsersApiRepository
 import com.example.snippets_viewer.users.infrastructure.api.models.ConnectedUserResponse
 import com.example.snippets_viewer.users.infrastructure.api.models.LoginRequest
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.error_screen
+import kotlinx.android.synthetic.main.activity_main.tv_display_error
+import kotlinx.android.synthetic.main.snippets_activity.*
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -37,10 +41,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v) {
             btn_login -> tryLogin()
+            close_error_login -> closeError()
+
         }
     }
 
     private fun tryLogin() {
+        tv_bad_credentials.visibility = View.INVISIBLE;
+
         ti_login.text?.let { login ->
             ti_password.text?.let { password ->
                 UsersApiRepository.signIn(LoginRequest(login.toString(), password.toString()), object: Callback<ConnectedUserResponse> {
@@ -48,10 +56,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                         call: Call<ConnectedUserResponse>,
                         response: Response<ConnectedUserResponse>
                     ) {
-                        response.body()?.let { connectedUser ->
-                            updateUserStorage.execute(connectedUser)
-                            navigateToProjectList()
+                        if (!response.isSuccessful) {
+                            handleError(response)
+                        } else {
+                            response.body()?.let { connectedUser ->
+                                updateUserStorage.execute(connectedUser)
+                                navigateToProjectList()
+                            }
                         }
+
                     }
 
                     override fun onFailure(call: Call<ConnectedUserResponse>, t: Throwable) {
@@ -61,6 +74,38 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
 
         }
+    }
+
+    private fun<T: Any> handleError(response: Response<T>) {
+        response.errorBody()?.let { error ->
+            val jObjError = JSONObject(error.string())
+            var errorCode = jObjError.getString("status")
+            if (errorCode.equals("401")) {
+                showLoginError()
+            } else {
+                var errorMessage = jObjError.getString("status")
+                if (errorMessage.isEmpty()) {
+                    errorMessage = "Unknown error"
+                }
+                Log.d("TEST", jObjError.toString());
+                showError(errorMessage)
+            }
+        } ?: run {
+            showError("Unknown error")
+        }
+    }
+
+    private fun showError(errorMessage: String) {
+        tv_display_error.text = errorMessage
+        error_screen.visibility = View.VISIBLE
+    }
+
+    private fun showLoginError() {
+        tv_bad_credentials.visibility = View.VISIBLE;
+    }
+
+    private fun closeError() {
+        error_screen.visibility = View.INVISIBLE
     }
 
     private fun navigateToProjectList() {

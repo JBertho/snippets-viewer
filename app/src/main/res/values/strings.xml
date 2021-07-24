@@ -17,4 +17,5 @@
     <string name="uncheck_all">Tout décocher</string>
     <string name="error">Erreur</string>
     <string name="close">Fermer</string>
+    <string name="bad_credentials">Login ou mot de passe incorrect</string>
 </resources>
