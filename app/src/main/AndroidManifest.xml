@@ -12,6 +12,7 @@
         android:roundIcon="@drawable/round_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.SnippetsViewer"
+        android:usesCleartextTraffic="true"
         >
         <activity android:name=".MainActivity"
             android:noHistory="true">
